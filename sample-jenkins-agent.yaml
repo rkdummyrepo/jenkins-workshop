@@ -1,0 +1,18 @@
+agent {
+      kubernetes {
+        yaml """
+          apiVersion: v1
+          kind: Pod
+          metadata:
+            labels:
+              name: pipeline
+          spec:
+            containers:
+              - name: build-tools
+                image: ubuntu:latest
+                command:
+                  - cat
+                tty: true
+        """
+      }
+}
