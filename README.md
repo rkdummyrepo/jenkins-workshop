@@ -21,6 +21,9 @@ sudo apt-get update
 # Install Jenkins
 sudo apt-get install jenkins -y
 
+# get adminpassword
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
 ```
 
 
