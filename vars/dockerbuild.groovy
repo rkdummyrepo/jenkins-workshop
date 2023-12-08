@@ -13,16 +13,13 @@ def call() {
                       // Checkout the current branch
                       checkout scm
                       // Print the current branch
-                      echo "Current branch: ${env.BRANCH_NAME}"
                   }
               }
           }
         stage('docker build'){
           steps {
             script {
-              if (env.BRANCH_NAME == 'Master' | env.BRANCH_NAME == 'main'){
-                sh "docker image build -t ${REPO_NAME}:${BUILD_NUMBER} ."
-              }
+                sh "docker image build -t spring:1.2.0 ."
             }
           }
         }
