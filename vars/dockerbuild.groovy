@@ -4,6 +4,7 @@ def call() {
     environment {
         REPO_NAME = sh(script: 'basename -s .git `git config --get remote.origin.url`', returnStdout: true).trim()
         BUILD_NUMBER = "${env.BUILD_NUMBER}"
+        BRANCH_NAME = "${env.BRANCH_NAME}"
     }
       stages {
           stage('Checkout') {
