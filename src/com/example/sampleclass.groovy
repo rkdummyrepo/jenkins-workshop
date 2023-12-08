@@ -2,7 +2,7 @@
 
 package com.example
 
-class common-lib implements Serializable {
+class MySharedLibrary implements Serializable {
     def call() {
         echo "Hello from sample-class function!"
     }
