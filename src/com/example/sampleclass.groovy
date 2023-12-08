@@ -1,9 +1,9 @@
-// src/com/example/sample-class.groovy
+// common-lib/src/com/example/MySharedLibrary.groovy
 
 package com.example
 
 class MySharedLibrary implements Serializable {
-    def call() {
-        echo "Hello from sample-class function!"
+    def echo(String message) {
+        println "Hello from MySharedLibrary: $message"
     }
 }
