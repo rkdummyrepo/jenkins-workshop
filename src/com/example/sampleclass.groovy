@@ -2,8 +2,6 @@
 
 package com.example
 
-class MySharedLibrary implements Serializable {
-    def echo(String message) {
+def MySharedLibrary(String message) {
         println "Hello from MySharedLibrary: $message"
-    }
 }
