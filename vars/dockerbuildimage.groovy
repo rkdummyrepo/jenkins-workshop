@@ -19,7 +19,8 @@ def call() {
         stage('docker build'){
           steps {
             script {
-                sh "docker image build -t spring:1.3.0 ."
+                sh "docker image build -t spring:1.4.0 ."
+                sh "docker images ls"
             }
           }
         }
