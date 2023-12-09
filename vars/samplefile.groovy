@@ -8,15 +8,15 @@ def call() {
       string defaultValue: 'hello-world', description: 'enter the application name', name: 'applicationName', trim: true
     }
       stages {
-          stage('Checkout') {
-              steps {
-                  script {
-                      // Checkout the current branch
-                      checkout scm
-                      // Print the current branch
-                  }
-              }
-          }
+          // stage('Checkout') {
+          //     steps {
+          //         script {
+          //             // Checkout the current branch
+          //             checkout scm
+          //             // Print the current branch
+          //         }
+          //     }
+          // }
         stage('print'){
           steps {
             script {
