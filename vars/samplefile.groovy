@@ -20,12 +20,7 @@ def call() {
         stage('print'){
           steps {
             script {
-              if (params['Type'] == docker){
                 echo "this type docker application"
-              }
-              else {
-                echo "type of application is not suppourt"
-              }
             }
           }
         }
