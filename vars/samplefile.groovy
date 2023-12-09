@@ -21,6 +21,7 @@ def call() {
           steps {
             script {
                 echo "this type docker application"
+                echo "applicationName is ${applicationName} and Type is ${Type}"
             }
           }
         }
