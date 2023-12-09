@@ -1,6 +1,7 @@
 def call() {
   pipeline {
     agent any
+    triggers { pollSCM '* * * * *'}
     environment {
         REPO_NAME = sh(script: 'basename -s .git `git config --get remote.origin.url`', returnStdout: true).trim()
         BUILD_NUMBER = "${env.BUILD_NUMBER}"
