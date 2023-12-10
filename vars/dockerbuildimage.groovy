@@ -20,8 +20,12 @@ def call() {
         stage('docker build'){
           steps {
             script {
-                sh "docker image build -t spring:1.4.0 ."
-                sh "docker images ls"
+              withCredentials([usernamePassword(credentialsId: 'jfrog', passwordVariable: 'jfrogpasswd', usernameVariable: 'jfroguser')]) {
+                sh "docker image build -t spring:1.5.0 ."
+                sh "docker tag spring:1.5.0 kfc2024.jfrog.io/dev-docker-docker/spring:1.5.0
+                sh "docker login kfc2024.jfrog.io -u ${jfroguser} -p ${jfrogpasswd}"
+                sh "docker push kfc2024.jfrog.io/dev-docker-docker/spring:1.5.0" 
+              }
             }
           }
         }
